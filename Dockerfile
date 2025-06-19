@@ -1,11 +1,13 @@
 FROM ubuntu:latest
 
 RUN apt-get update && apt-get install -y \
- python3.10 \
- python3-pip \
- python3.10-dev \
- build-essential \
- git
+    python3.10 \
+    python3.10-dev \
+    python3-pip \
+    build-essential \
+    git && \
+    ln -sf /usr/bin/python3.10 /usr/bin/python3 && \
+    ln -sf /usr/bin/pip3 /usr/bin/pip
 
 RUN python3.10 -m pip install PyYAML
 
